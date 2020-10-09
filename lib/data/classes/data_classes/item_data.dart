@@ -13,11 +13,12 @@ class ItemData {
 
   ItemData.magic({
     @required this.id,
-    @required this.name,
     @required this.payTypeIndex,
+    @required bool isSmall,
     @required this.price,
     @required this.imagePath,
-  }) : this.itemTypeIndex = ItemType.MAGIC.index;
+  })  : this.name = '魔法(${isSmall ? '小' : '大'})',
+        this.itemTypeIndex = ItemType.MAGIC.index;
 
   ItemData.outfit({
     @required this.id,
