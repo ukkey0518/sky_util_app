@@ -48,7 +48,7 @@ class ItemData {
   ItemData.lock({
     @required this.id,
     @required this.price,
-  })  : this.name = 'ツリー開放',
+  })  : this.name = 'アンロック',
         this.itemTypeIndex = ItemType.MAGIC.index,
         this.payTypeIndex = PayType.STAR_CANDLE.index,
         //TODO: 画像パス指定
