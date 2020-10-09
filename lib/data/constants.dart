@@ -62,6 +62,8 @@ enum ItemType {
 
 // 支払いタイプ
 enum PayType {
+  // 無料
+  FREE,
   // 通常キャンドル
   NORMAL_CANDLE,
   // 星キャンドル
