@@ -24,6 +24,8 @@ enum ItemType {
   OUTFIT,
   // 感情表現
   EXPRESSION,
+  // ハート
+  HEART,
   // 星キャン開放
   LOCK,
 }
