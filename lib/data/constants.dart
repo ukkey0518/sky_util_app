@@ -27,3 +27,13 @@ enum ItemType {
   // 星キャン開放
   LOCK,
 }
+
+// 支払いタイプ
+enum PayType {
+  // 通常キャンドル
+  NORMAL_CANDLE,
+  // 星キャンドル
+  STAR_CANDLE,
+  // ハート
+  HEART,
+}
