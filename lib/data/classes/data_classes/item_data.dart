@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sky_util_app/data/constants.dart';
 
 class ItemData {
   const ItemData({
@@ -9,6 +10,39 @@ class ItemData {
     @required this.price,
     @required this.imagePath,
   });
+
+  ItemData.magic({
+    @required this.id,
+    @required this.name,
+    @required this.payTypeIndex,
+    @required this.price,
+    @required this.imagePath,
+  }) : this.itemTypeIndex = ItemType.MAGIC.index;
+
+  ItemData.outfit({
+    @required this.id,
+    @required this.name,
+    @required this.payTypeIndex,
+    @required this.price,
+    @required this.imagePath,
+  }) : this.itemTypeIndex = ItemType.OUTFIT.index;
+
+  ItemData.expression({
+    @required this.id,
+    @required this.name,
+    @required this.payTypeIndex,
+    @required this.price,
+    @required this.imagePath,
+  }) : this.itemTypeIndex = ItemType.EXPRESSION.index;
+
+  ItemData.lock({
+    @required this.id,
+    @required this.price,
+  })  : this.name = 'ツリー開放',
+        this.itemTypeIndex = ItemType.MAGIC.index,
+        this.payTypeIndex = PayType.STAR_CANDLE.index,
+        //TODO: 画像パスの指定
+        this.imagePath = null;
 
   final String id;
   final int itemTypeIndex;
