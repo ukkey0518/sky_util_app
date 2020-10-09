@@ -10,6 +10,13 @@ class ItemData {
     @required this.imagePath,
   });
 
+  const ItemData.free({
+    @required this.id,
+    @required this.itemType,
+    @required this.imagePath,
+  })  : this.payType = PayType.FREE,
+        this.price = 0;
+
   const ItemData.normal({
     @required this.id,
     @required this.itemType,
