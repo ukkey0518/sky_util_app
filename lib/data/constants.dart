@@ -18,16 +18,46 @@ enum Stage {
 
 // アイテム種別
 enum ItemType {
-  // 魔法
-  MAGIC,
-  // ドレスアップアイテム
-  OUTFIT,
-  // 感情表現
-  EXPRESSION,
+  // 魔法(小)
+  MAGIC_SMALL,
+  // 魔法(大)
+  MAGIC_BIG,
+
+  // 衣装(パンツ)
+  OUTFIT_PANTS,
+  // 衣装(顔)
+  OUTFIT_MASK,
+  // 衣装(ヘアスタイル)
+  OUTFIT_HAIR,
+  // 衣装(ケープ)
+  OUTFIT_CAPE,
+  // 衣装(アイテム)
+  OUTFIT_ITEM,
+
+  // 感情表現(レベル1)
+  EXPRESSION_1,
+  // 感情表現(レベル2)
+  EXPRESSION_2,
+  // 感情表現(レベル3)
+  EXPRESSION_3,
+  // 感情表現(レベル4)
+  EXPRESSION_4,
+  // 感情表現(レベル5)
+  EXPRESSION_5,
+  // 感情表現(レベル6)
+  EXPRESSION_6,
+
+  // 鳴き声
+  CALL,
+
+  // 楽譜
+  SCORE,
+
   // ハート
   HEART,
-  // 星キャン開放
-  LOCK,
+
+  // ツリー開放
+  TREE_UNLOCK,
 }
 
 // 支払いタイプ
