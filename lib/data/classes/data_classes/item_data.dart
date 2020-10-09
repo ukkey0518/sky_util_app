@@ -36,13 +36,22 @@ class ItemData {
     @required this.imagePath,
   }) : this.itemTypeIndex = ItemType.EXPRESSION.index;
 
+  ItemData.heart({
+    @required this.id,
+    @required this.price,
+  })  : this.name = 'ハート',
+        this.payTypeIndex = PayType.NORMAL_CANDLE.index,
+        this.itemTypeIndex = ItemType.MAGIC.index,
+        //TODO: 画像パス指定
+        this.imagePath = null;
+
   ItemData.lock({
     @required this.id,
     @required this.price,
   })  : this.name = 'ツリー開放',
         this.itemTypeIndex = ItemType.MAGIC.index,
         this.payTypeIndex = PayType.STAR_CANDLE.index,
-        //TODO: 画像パスの指定
+        //TODO: 画像パス指定
         this.imagePath = null;
 
   final String id;
