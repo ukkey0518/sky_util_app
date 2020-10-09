@@ -1,10 +1,10 @@
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
-import 'package:sky_util_app/mvvm/models/database_manager.dart';
-import 'package:sky_util_app/mvvm/repositories/spirit_tree_repository.dart';
-import 'package:sky_util_app/mvvm/repositories/star_repository.dart';
-import 'package:sky_util_app/mvvm/views/view/wrapper/pages/spirit_tree/spirit_tree_view_model.dart';
-import 'package:sky_util_app/mvvm/views/view/wrapper/pages/star/star_view_model.dart';
+import 'package:sky_util_app/app/models/database_manager.dart';
+import 'package:sky_util_app/app/repositories/spirit_tree_repository.dart';
+import 'package:sky_util_app/app/repositories/star_repository.dart';
+import 'package:sky_util_app/app/views/spirit_tree/spirit_tree_view_model.dart';
+import 'package:sky_util_app/app/views/star/star_view_model.dart';
 
 List<SingleChildWidget> globalProviders = [
   ...independentModels,

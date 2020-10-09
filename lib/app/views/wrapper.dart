@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:sky_util_app/mvvm/views/view/wrapper/pages/home/home.dart';
-import 'package:sky_util_app/mvvm/views/view/wrapper/pages/profile/profile.dart';
-import 'package:sky_util_app/mvvm/views/view/wrapper/pages/spirit_tree/spirit_tree.dart';
-import 'package:sky_util_app/mvvm/views/view/wrapper/pages/star/star.dart';
+import 'package:sky_util_app/app/views/home/home.dart';
+import 'package:sky_util_app/app/views/spirit_tree/spirit_tree.dart';
+import 'package:sky_util_app/app/views/star/star.dart';
 
 class WrapperScreen extends StatefulWidget {
   @override
@@ -17,7 +16,6 @@ class _WrapperScreenState extends State<WrapperScreen> {
     HomePage(),
     SpiritTreePage(),
     StarPage(),
-    ProfilePage(),
   ];
 
   @override
@@ -38,10 +36,6 @@ class _WrapperScreenState extends State<WrapperScreen> {
           BottomNavigationBarItem(
             icon: Icon(Entypo.light_down),
             title: const Text('光の子'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(MaterialCommunityIcons.face_profile),
-            title: const Text('プロフィール'),
           ),
         ],
         onTap: (index) => setState(() => _currentIndex = index),
