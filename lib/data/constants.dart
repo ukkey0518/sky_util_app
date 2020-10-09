@@ -15,3 +15,15 @@ enum Stage {
   // 暴風域
   STORM,
 }
+
+// アイテム種別
+enum ItemType {
+  // 魔法
+  MAGIC,
+  // ドレスアップアイテム
+  OUTFIT,
+  // 感情表現
+  EXPRESSION,
+  // 星キャン開放
+  LOCK,
+}
