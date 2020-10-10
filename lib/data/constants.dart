@@ -71,3 +71,10 @@ enum PayType {
   // ハート
   HEART,
 }
+
+// アイテム位置
+enum ItemPosition {
+  LEFT,
+  CENTER,
+  RIGHT,
+}
