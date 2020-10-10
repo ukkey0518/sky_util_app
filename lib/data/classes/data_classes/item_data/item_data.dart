@@ -3,15 +3,76 @@ import 'package:sky_util_app/data/classes/data_classes/price_data/price.dart';
 import 'package:sky_util_app/data/constants.dart';
 
 abstract class ItemData {
-  const ItemData({
+  ItemData({
     @required this.itemType,
     @required this.price,
     @required this.imagePath,
+    @required this.isAcquired,
   });
 
   final ItemType itemType;
   final Price price;
   final String imagePath;
+  bool isAcquired;
+
+  @override
+  String toString() {
+    var className;
+    switch (itemType) {
+      case ItemType.MAGIC_SMALL:
+        className = 'SmallMagic';
+        break;
+      case ItemType.MAGIC_BIG:
+        className = 'BigMagic';
+        break;
+      case ItemType.OUTFIT_PANTS:
+        className = 'OutFitPants';
+        break;
+      case ItemType.OUTFIT_MASK:
+        className = 'OutFitMask';
+        break;
+      case ItemType.OUTFIT_HAIR:
+        className = 'OutFitHair';
+        break;
+      case ItemType.OUTFIT_CAPE:
+        className = 'OutFitCape';
+        break;
+      case ItemType.OUTFIT_ITEM:
+        className = 'OutFitItem';
+        break;
+      case ItemType.EXPRESSION_1:
+        className = 'Expression1';
+        break;
+      case ItemType.EXPRESSION_2:
+        className = 'Expression2';
+        break;
+      case ItemType.EXPRESSION_3:
+        className = 'Expression3';
+        break;
+      case ItemType.EXPRESSION_4:
+        className = 'Expression4';
+        break;
+      case ItemType.EXPRESSION_5:
+        className = 'Expression5';
+        break;
+      case ItemType.EXPRESSION_6:
+        className = 'Expression6';
+        break;
+      case ItemType.CALL:
+        className = 'Call';
+        break;
+      case ItemType.SCORE:
+        className = 'Score';
+        break;
+      case ItemType.HEART:
+        className = 'Heart';
+        break;
+      case ItemType.TREE_UNLOCK:
+        className = 'TreeUnLock';
+        break;
+    }
+    return '$className{price:$price, imagePath:$imagePath, isAcquired:$isAcquired}';
+  }
 }
 
 // 魔法(小)
@@ -22,6 +83,7 @@ class SmallMagic extends ItemData {
           price: price,
           //TODO: 画像パスの指定
           imagePath: null,
+          isAcquired: false,
         );
 }
 
@@ -33,6 +95,7 @@ class BigMagic extends ItemData {
           price: price,
           //TODO: 画像パスの指定
           imagePath: null,
+          isAcquired: false,
         );
 }
 
@@ -43,6 +106,7 @@ class OutFitPants extends ItemData {
           itemType: ItemType.OUTFIT_PANTS,
           price: price,
           imagePath: imagePath,
+          isAcquired: false,
         );
 }
 
@@ -53,6 +117,7 @@ class OutFitMask extends ItemData {
           itemType: ItemType.OUTFIT_MASK,
           price: price,
           imagePath: imagePath,
+          isAcquired: false,
         );
 }
 
@@ -63,6 +128,7 @@ class OutFitHair extends ItemData {
           itemType: ItemType.OUTFIT_HAIR,
           price: price,
           imagePath: imagePath,
+          isAcquired: false,
         );
 }
 
@@ -73,6 +139,7 @@ class OutFitCape extends ItemData {
           itemType: ItemType.OUTFIT_CAPE,
           price: price,
           imagePath: imagePath,
+          isAcquired: false,
         );
 }
 
@@ -83,6 +150,7 @@ class OutFitItem extends ItemData {
           itemType: ItemType.OUTFIT_ITEM,
           price: price,
           imagePath: imagePath,
+          isAcquired: false,
         );
 }
 
@@ -93,6 +161,7 @@ class Expression1 extends ItemData {
           itemType: ItemType.EXPRESSION_1,
           price: price,
           imagePath: imagePath,
+          isAcquired: false,
         );
 }
 
@@ -103,6 +172,7 @@ class Expression2 extends ItemData {
           itemType: ItemType.EXPRESSION_2,
           price: price,
           imagePath: imagePath,
+          isAcquired: false,
         );
 }
 
@@ -113,6 +183,7 @@ class Expression3 extends ItemData {
           itemType: ItemType.EXPRESSION_3,
           price: price,
           imagePath: imagePath,
+          isAcquired: false,
         );
 }
 
@@ -123,6 +194,7 @@ class Expression4 extends ItemData {
           itemType: ItemType.EXPRESSION_4,
           price: price,
           imagePath: imagePath,
+          isAcquired: false,
         );
 }
 
@@ -133,6 +205,7 @@ class Expression5 extends ItemData {
           itemType: ItemType.EXPRESSION_5,
           price: price,
           imagePath: imagePath,
+          isAcquired: false,
         );
 }
 
@@ -143,6 +216,7 @@ class Expression6 extends ItemData {
           itemType: ItemType.EXPRESSION_6,
           price: price,
           imagePath: imagePath,
+          isAcquired: false,
         );
 }
 
@@ -153,6 +227,7 @@ class Call extends ItemData {
           itemType: ItemType.CALL,
           price: price,
           imagePath: imagePath,
+          isAcquired: false,
         );
 }
 
@@ -164,6 +239,7 @@ class Score extends ItemData {
           price: price,
           //TODO: 画像パスの指定
           imagePath: null,
+          isAcquired: false,
         );
 }
 
@@ -175,6 +251,7 @@ class Heart extends ItemData {
           price: price,
           //TODO: 画像パスの指定
           imagePath: null,
+          isAcquired: false,
         );
 }
 
@@ -186,5 +263,6 @@ class TreeUnLock extends ItemData {
           price: price,
           //TODO: 画像パスの指定
           imagePath: null,
+          isAcquired: false,
         );
 }
