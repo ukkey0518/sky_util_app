@@ -31,6 +31,6 @@ class Price {
         payTypeText = 'ハート';
         break;
     }
-    return 'Price{$payTypeText,${price == null || price == 0 ? '' : price}';
+    return 'Price{$payTypeText${price == null || price == 0 ? '' : ':$price'}}';
   }
 }
