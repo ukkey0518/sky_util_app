@@ -9,7 +9,7 @@ class ItemTree {
   }
 
   void _initialize(List<TreeRow> rows) {
-    for (int i = 0; i <= rows.length; i++) {
+    for (int i = 0; i < rows.length; i++) {
       _rows.putIfAbsent(i, () => rows[i]);
     }
   }
@@ -18,6 +18,60 @@ class ItemTree {
 
   Map<int, List<bool>> get acquiredData => _rows.map<int, List<bool>>(
       (index, row) => MapEntry<int, List<bool>>(index, row.acquiredList));
+
+  /// 合計: 通常キャンドル数
+  int get totalCandles {
+    int count = 0;
+    _rows.forEach((index, row) {
+      count += row.totalCandles;
+    });
+    return count;
+  }
+
+  /// 合計: 星キャンドル数
+  int get totalStarCandles {
+    int count = 0;
+    _rows.forEach((index, row) {
+      count += row.totalStarCandles;
+    });
+    return count;
+  }
+
+  /// 残り: ハート数
+  int get totalHearts {
+    int count = 0;
+    _rows.forEach((index, row) {
+      count += row.totalHearts;
+    });
+    return count;
+  }
+
+  /// 残り: 通常キャンドル数
+  int get remainingCandles {
+    int count = 0;
+    _rows.forEach((index, row) {
+      count += row.remainingCandles;
+    });
+    return count;
+  }
+
+  /// 残り: 星キャンドル数
+  int get remainingStarCandles {
+    int count = 0;
+    _rows.forEach((index, row) {
+      count += row.remainingStarCandles;
+    });
+    return count;
+  }
+
+  /// 合計: ハート数
+  int get remainingHearts {
+    int count = 0;
+    _rows.forEach((index, row) {
+      count += row.remainingHearts;
+    });
+    return count;
+  }
 
   /// 取得状態の反映
   void initAcquiredData(Map<int, List<bool>> state) {
