@@ -16,6 +16,27 @@ class ItemTree {
 
   Map<int, TreeRow> _rows = {};
 
+  Map<int, List<bool>> get acquiredData => _rows.map<int, List<bool>>(
+      (index, row) => MapEntry<int, List<bool>>(index, row.acquiredList));
+
+  /// 取得状態の反映
+  void initAcquiredData(Map<int, List<bool>> state) {
+    state.forEach((index, status) {
+      _rows[index].setAcquired(ItemPosition.LEFT, status[0]);
+      _rows[index].setAcquired(ItemPosition.CENTER, status[1]);
+      _rows[index].setAcquired(ItemPosition.RIGHT, status[2]);
+    });
+  }
+
+  /// 獲得状態の変更
+  void setAcquired({
+    @required int index,
+    @required ItemPosition position,
+    @required bool isAcquired,
+  }) {
+    _rows[index].setAcquired(position, isAcquired);
+  }
+
   /// TreeRowのセット
   void setRow({
     @required int index,
@@ -49,21 +70,8 @@ class ItemTree {
     return _rows[index].getItem(position);
   }
 
-  /// 取得状態の反映
-  void initAcquiredState(Map<int, List<bool>> state) {
-    state.forEach((index, status) {
-      _rows[index].setAcquired(ItemPosition.LEFT, status[0]);
-      _rows[index].setAcquired(ItemPosition.CENTER, status[1]);
-      _rows[index].setAcquired(ItemPosition.RIGHT, status[2]);
-    });
-  }
-
-  /// 獲得状態の変更
-  void setAcquired({
-    @required int index,
-    @required ItemPosition position,
-    @required bool isAcquired,
-  }) {
-    _rows[index].setAcquired(position, isAcquired);
+  @override
+  String toString() {
+    return 'ItemTree{rows:$_rows}';
   }
 }

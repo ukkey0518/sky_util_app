@@ -20,17 +20,23 @@ class TreeRow {
 
   ItemData get right => _right;
 
+  List<bool> get acquiredList => <bool>[
+        _left?.isAcquired,
+        _center?.isAcquired,
+        _right?.isAcquired,
+      ];
+
   /// 獲得状態の変更
   void setAcquired(ItemPosition position, bool isAcquired) {
     switch (position) {
       case ItemPosition.LEFT:
-        _left.isAcquired = isAcquired;
+        if (_left != null) _left.isAcquired = isAcquired;
         break;
       case ItemPosition.CENTER:
-        _center.isAcquired = isAcquired;
+        if (_center != null) _center.isAcquired = isAcquired;
         break;
       case ItemPosition.RIGHT:
-        _right.isAcquired = isAcquired;
+        if (right != null) _right.isAcquired = isAcquired;
         break;
     }
   }
