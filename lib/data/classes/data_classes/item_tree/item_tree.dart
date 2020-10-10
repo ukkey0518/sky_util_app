@@ -14,10 +14,50 @@ class ItemTree {
     }
   }
 
+  /// 取得状態の反映
+  void initAcquiredData(Map<int, List<bool>> state) {
+    state.forEach((index, status) {
+      _rows[index].setAcquired(ItemPosition.LEFT, status[0]);
+      _rows[index].setAcquired(ItemPosition.CENTER, status[1]);
+      _rows[index].setAcquired(ItemPosition.RIGHT, status[2]);
+    });
+  }
+
   Map<int, TreeRow> _rows = {};
+
+  /// 獲得状態の変更
+  void setAcquired({
+    @required int index,
+    @required ItemPosition position,
+    @required bool isAcquired,
+  }) {
+    _rows[index].setAcquired(position, isAcquired);
+  }
 
   Map<int, List<bool>> get acquiredData => _rows.map<int, List<bool>>(
       (index, row) => MapEntry<int, List<bool>>(index, row.acquiredList));
+
+  /// 合計: アイテム数
+  int get totalItemLength {
+    int count = 0;
+    _rows.values.forEach((row) {
+      if (row.left != null) count++;
+      if (row.center != null) count++;
+      if (row.right != null) count++;
+    });
+    return count;
+  }
+
+  /// 残り: アイテム数
+  int get remainingItemLength {
+    int count = 0;
+    _rows.values.forEach((row) {
+      if (row.left != null && !row.left.isAcquired) count++;
+      if (row.center != null && !row.center.isAcquired) count++;
+      if (row.right != null && !row.right.isAcquired) count++;
+    });
+    return count;
+  }
 
   /// 合計: 通常キャンドル数
   int get totalCandles {
@@ -71,24 +111,6 @@ class ItemTree {
       count += row.remainingHearts;
     });
     return count;
-  }
-
-  /// 取得状態の反映
-  void initAcquiredData(Map<int, List<bool>> state) {
-    state.forEach((index, status) {
-      _rows[index].setAcquired(ItemPosition.LEFT, status[0]);
-      _rows[index].setAcquired(ItemPosition.CENTER, status[1]);
-      _rows[index].setAcquired(ItemPosition.RIGHT, status[2]);
-    });
-  }
-
-  /// 獲得状態の変更
-  void setAcquired({
-    @required int index,
-    @required ItemPosition position,
-    @required bool isAcquired,
-  }) {
-    _rows[index].setAcquired(position, isAcquired);
   }
 
   /// TreeRowのセット
