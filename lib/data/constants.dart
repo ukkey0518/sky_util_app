@@ -47,6 +47,9 @@ enum ItemType {
   // 感情表現(レベル6)
   EXPRESSION_6,
 
+  // スタイル(立ち方)
+  STYLE,
+
   // 鳴き声
   CALL,
 
