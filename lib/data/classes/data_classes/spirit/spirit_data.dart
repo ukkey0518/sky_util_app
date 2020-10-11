@@ -4,28 +4,28 @@ import 'package:sky_util_app/data/constants.dart';
 
 class SpiritData {
   const SpiritData({
-    @required this.id,
     @required this.stage,
+    @required this.number,
     @required this.name,
     @required this.itemTree,
     @required this.imagePath,
   });
 
-  final String id;
   final Stage stage;
+  final String number;
   final String name;
   final ItemTree itemTree;
   final String imagePath;
 
   SpiritData copyWith({
-    String id,
     Stage stage,
+    String number,
     String name,
     ItemTree itemTree,
     String imagePath,
   }) {
-    if ((id == null || identical(id, this.id)) &&
-        (stage == null || identical(stage, this.stage)) &&
+    if ((stage == null || identical(stage, this.stage)) &&
+        (number == null || identical(number, this.number)) &&
         (name == null || identical(name, this.name)) &&
         (itemTree == null || identical(itemTree, this.itemTree)) &&
         (imagePath == null || identical(imagePath, this.imagePath))) {
@@ -33,8 +33,8 @@ class SpiritData {
     }
 
     return new SpiritData(
-      id: id ?? this.id,
       stage: stage ?? this.stage,
+      number: number ?? this.number,
       name: name ?? this.name,
       itemTree: itemTree ?? this.itemTree,
       imagePath: imagePath ?? this.imagePath,
@@ -43,7 +43,7 @@ class SpiritData {
 
   @override
   String toString() {
-    return 'SpiritData{id: $id, stage: $stage, name: $name, itemTree: $itemTree, imagePath: $imagePath}';
+    return 'SpiritData{stage: $stage, number: $number, name: $name, itemTree: $itemTree, imagePath: $imagePath}';
   }
 
   @override
@@ -51,24 +51,24 @@ class SpiritData {
       identical(this, other) ||
       (other is SpiritData &&
           runtimeType == other.runtimeType &&
-          id == other.id &&
           stage == other.stage &&
+          number == other.number &&
           name == other.name &&
           itemTree == other.itemTree &&
           imagePath == other.imagePath);
 
   @override
   int get hashCode =>
-      id.hashCode ^
       stage.hashCode ^
+      number.hashCode ^
       name.hashCode ^
       itemTree.hashCode ^
       imagePath.hashCode;
 
   factory SpiritData.fromMap(Map<String, dynamic> map) {
     return new SpiritData(
-      id: map['id'] as String,
       stage: map['stage'] as Stage,
+      number: map['number'] as String,
       name: map['name'] as String,
       itemTree: map['itemTree'] as ItemTree,
       imagePath: map['imagePath'] as String,
@@ -78,8 +78,8 @@ class SpiritData {
   Map<String, dynamic> toMap() {
     // ignore: unnecessary_cast
     return {
-      'id': this.id,
       'stage': this.stage,
+      'number': this.number,
       'name': this.name,
       'itemTree': this.itemTree,
       'imagePath': this.imagePath,
