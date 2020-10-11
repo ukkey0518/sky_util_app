@@ -58,6 +58,9 @@ abstract class ItemData {
       case ItemType.EXPRESSION_6:
         className = 'Expression6';
         break;
+      case ItemType.STYLE:
+        className = 'Style';
+        break;
       case ItemType.CALL:
         className = 'Call';
         break;
@@ -214,6 +217,17 @@ class Expression6 extends ItemData {
   Expression6(Price price, {@required String imagePath})
       : super(
           itemType: ItemType.EXPRESSION_6,
+          price: price,
+          imagePath: imagePath,
+          isAcquired: false,
+        );
+}
+
+// スタイル(立ち方)
+class Style extends ItemData {
+  Style(Price price, {@required String imagePath})
+      : super(
+          itemType: ItemType.STYLE,
           price: price,
           imagePath: imagePath,
           isAcquired: false,
