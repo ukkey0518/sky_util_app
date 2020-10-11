@@ -7,28 +7,28 @@ class SpiritData {
     @required this.stage,
     @required this.number,
     @required this.name,
-    @required this.itemTree,
     @required this.imagePath,
+    @required this.itemTree,
   });
 
   final Stage stage;
-  final String number;
+  final int number;
   final String name;
-  final ItemTree itemTree;
   final String imagePath;
+  final ItemTree itemTree;
 
   SpiritData copyWith({
     Stage stage,
-    String number,
+    int number,
     String name,
-    ItemTree itemTree,
     String imagePath,
+    ItemTree itemTree,
   }) {
     if ((stage == null || identical(stage, this.stage)) &&
         (number == null || identical(number, this.number)) &&
         (name == null || identical(name, this.name)) &&
-        (itemTree == null || identical(itemTree, this.itemTree)) &&
-        (imagePath == null || identical(imagePath, this.imagePath))) {
+        (imagePath == null || identical(imagePath, this.imagePath)) &&
+        (itemTree == null || identical(itemTree, this.itemTree))) {
       return this;
     }
 
@@ -36,14 +36,14 @@ class SpiritData {
       stage: stage ?? this.stage,
       number: number ?? this.number,
       name: name ?? this.name,
-      itemTree: itemTree ?? this.itemTree,
       imagePath: imagePath ?? this.imagePath,
+      itemTree: itemTree ?? this.itemTree,
     );
   }
 
   @override
   String toString() {
-    return 'SpiritData{stage: $stage, number: $number, name: $name, itemTree: $itemTree, imagePath: $imagePath}';
+    return 'SpiritData{stage: $stage, number: $number, name: $name, imagePath: $imagePath, itemTree: $itemTree}';
   }
 
   @override
@@ -54,35 +54,14 @@ class SpiritData {
           stage == other.stage &&
           number == other.number &&
           name == other.name &&
-          itemTree == other.itemTree &&
-          imagePath == other.imagePath);
+          imagePath == other.imagePath &&
+          itemTree == other.itemTree);
 
   @override
   int get hashCode =>
       stage.hashCode ^
       number.hashCode ^
       name.hashCode ^
-      itemTree.hashCode ^
-      imagePath.hashCode;
-
-  factory SpiritData.fromMap(Map<String, dynamic> map) {
-    return new SpiritData(
-      stage: map['stage'] as Stage,
-      number: map['number'] as String,
-      name: map['name'] as String,
-      itemTree: map['itemTree'] as ItemTree,
-      imagePath: map['imagePath'] as String,
-    );
-  }
-
-  Map<String, dynamic> toMap() {
-    // ignore: unnecessary_cast
-    return {
-      'stage': this.stage,
-      'number': this.number,
-      'name': this.name,
-      'itemTree': this.itemTree,
-      'imagePath': this.imagePath,
-    } as Map<String, dynamic>;
-  }
+      imagePath.hashCode ^
+      itemTree.hashCode;
 }
