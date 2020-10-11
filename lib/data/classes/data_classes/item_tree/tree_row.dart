@@ -4,9 +4,9 @@ import 'package:sky_util_app/data/constants.dart';
 
 class TreeRow {
   TreeRow({
-    ItemData left,
+    @required ItemData left,
     @required ItemData center,
-    ItemData right,
+    @required ItemData right,
   })  : this._left = left,
         this._center = center,
         this._right = right;
