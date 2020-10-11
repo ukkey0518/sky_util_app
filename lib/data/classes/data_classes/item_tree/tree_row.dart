@@ -21,6 +21,8 @@ class TreeRow {
 
   ItemData get right => _right;
 
+  bool get isGotCenter => center.isAcquired;
+
   List<bool> get acquiredList => <bool>[
         _left?.isAcquired,
         _center?.isAcquired,
