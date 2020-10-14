@@ -10,11 +10,11 @@ class WrapperScreen extends StatefulWidget {
 }
 
 class _WrapperScreenState extends State<WrapperScreen> {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
 
   final _pages = [
-    HomePage(),
     SpiritTreePage(),
+    HomePage(),
     StarPage(),
   ];
 
@@ -26,12 +26,12 @@ class _WrapperScreenState extends State<WrapperScreen> {
         currentIndex: _currentIndex,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: const Text('ホーム'),
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Entypo.flow_tree),
             title: const Text('精霊ツリー'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: const Text('ホーム'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Entypo.light_down),
