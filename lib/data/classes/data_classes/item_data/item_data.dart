@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sky_util_app/data/classes/data_classes/price_data/price.dart';
 import 'package:sky_util_app/data/constants.dart';
+import 'package:sky_util_app/data/image_path.dart';
 
 abstract class ItemData {
   ItemData({
@@ -84,8 +85,7 @@ class SmallMagic extends ItemData {
       : super(
           itemType: ItemType.MAGIC_SMALL,
           price: price,
-          //TODO: 画像パスの指定
-          imagePath: null,
+          imagePath: ImagePath.ic_magic_small,
           isAcquired: false,
         );
 }
@@ -96,8 +96,7 @@ class BigMagic extends ItemData {
       : super(
           itemType: ItemType.MAGIC_BIG,
           price: price,
-          //TODO: 画像パスの指定
-          imagePath: null,
+          imagePath: ImagePath.ic_magic_big,
           isAcquired: false,
         );
 }
@@ -251,8 +250,7 @@ class Score extends ItemData {
       : super(
           itemType: ItemType.SCORE,
           price: price,
-          //TODO: 画像パスの指定
-          imagePath: null,
+          imagePath: ImagePath.ic_score,
           isAcquired: false,
         );
 }
@@ -263,8 +261,7 @@ class Heart extends ItemData {
       : super(
           itemType: ItemType.SCORE,
           price: price,
-          //TODO: 画像パスの指定
-          imagePath: null,
+          imagePath: ImagePath.ic_heart,
           isAcquired: false,
         );
 }
@@ -275,8 +272,7 @@ class TreeUnLock extends ItemData {
       : super(
           itemType: ItemType.TREE_UNLOCK,
           price: price,
-          //TODO: 画像パスの指定
-          imagePath: null,
+          imagePath: ImagePath.ic_tree_unlock,
           isAcquired: false,
         );
 }
