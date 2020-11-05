@@ -1,3 +1,5 @@
+final fontPixel = 'pixel';
+
 // ステージ
 enum Stage {
   // 孤島 (Stage1)
