@@ -31,6 +31,9 @@ dependencies:
   ### https://pub.dev/packages/flutter_spinkit
   flutter_spinkit: ^4.1.2+1
 
+  ### https://pub.dev/packages/auto_animated
+  auto_animated: ^2.1.0
+
 
   # -- Provider --
   ### https://pub.dev/packages/provider
@@ -78,10 +81,10 @@ flutter:
 
   assets:
     - assets/images/background/
+    - assets/images/ic/
+    - assets/images/ic/common/
 
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  fonts:
+    - family: marugame
+      fonts:
+        - asset: assets/fonts/marugame.otf
