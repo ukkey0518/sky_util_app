@@ -85,6 +85,6 @@ flutter:
     - assets/images/ic/common/
 
   fonts:
-    - family: marugame
+    - family: pixel
       fonts:
-        - asset: assets/fonts/marugame.otf
+        - asset: assets/fonts/PixelMplus12-Regular.ttf
